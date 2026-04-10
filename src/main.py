@@ -1,13 +1,14 @@
+
+# Main Updated
+
 import argparse
 import csv
 import cv2
 import os
-import sys
 import time
 
 from tqdm import tqdm
 
-sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "Files"))
 
 from config import VideoConfig, FarnebackConfig, LucasKanadeConfig, TrackerConfig
 from utils import ensure_output_dirs, open_video, get_video_writer, to_gray

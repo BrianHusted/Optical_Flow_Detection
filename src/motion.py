@@ -12,9 +12,17 @@ def flow_to_magnitude(flow: np.ndarray) -> np.ndarray:
 def motion_mask_from_magnitude(magnitude: np.ndarray, threshold: float) -> np.ndarray:
     mask = (magnitude > threshold).astype(np.uint8) * 255
 
-    kernel = np.ones((5, 5), np.uint8)
-    mask = cv2.morphologyEx(mask, cv2.MORPH_OPEN, kernel)
-    mask = cv2.morphologyEx(mask, cv2.MORPH_DILATE, kernel)
+    small_kernel = np.ones((5, 5), np.uint8)
+    large_kernel = np.ones((9, 9), np.uint8)
+
+    # Remove tiny noise
+    mask = cv2.morphologyEx(mask, cv2.MORPH_OPEN, small_kernel)
+
+    # Merge nearby moving regions into a more coherent blob
+    mask = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, large_kernel)
+
+    # Slight dilation to stabilize final regions
+    mask = cv2.dilate(mask, small_kernel, iterations=1)
 
     return mask
 

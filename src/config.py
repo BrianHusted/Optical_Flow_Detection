@@ -18,8 +18,8 @@ class FarnebackConfig:
     poly_sigma: float = 1.2
     flags: int = 0
 
-    motion_threshold: float = 2.0
-    min_contour_area: int = 500
+    motion_threshold: float = 3.0
+    min_contour_area: int = 1200
 
 
 @dataclass

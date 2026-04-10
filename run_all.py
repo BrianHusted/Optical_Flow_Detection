@@ -28,7 +28,7 @@ def main():
             print(f"\n  -> method: {method}")
             subprocess.run(
                 [
-                    sys.executable, "main_updated.py",
+                    sys.executable, "src/main.py",
                     "--video",     video_path,
                     "--method",    method,
                     "--condition", condition,
