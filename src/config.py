@@ -19,7 +19,7 @@ class FarnebackConfig:
     flags: int = 0
 
     motion_threshold: float = 3.0
-    min_contour_area: int = 1200
+    min_contour_area: int = 800
 
 
 @dataclass
@@ -32,11 +32,24 @@ class LucasKanadeConfig:
     win_size: tuple = (15, 15)
     max_level: int = 2
 
+    lk_criteria_count: int = 10
+    lk_criteria_eps: float = 0.03
+
     feature_reinit_interval: int = 10
+    min_tracked_points: int = 40
+
     point_motion_threshold: float = 2.0
+    max_point_motion: float = 100.0
+
+    lk_max_error: float = 20.0
+    fb_max_error: float = 1.5
+
     min_points_for_box: int = 6
     box_padding: int = 10
     cluster_distance: int = 50
+    roi_padding: int = 30
+
+    draw_tracks: bool = True
 
 
 @dataclass
