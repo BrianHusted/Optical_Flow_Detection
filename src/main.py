@@ -1,6 +1,3 @@
-
-# Main Updated
-
 import argparse
 import csv
 import cv2

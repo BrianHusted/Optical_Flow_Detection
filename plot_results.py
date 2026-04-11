@@ -18,10 +18,11 @@ OUTPUT_PATH = "outputs/metrics/comparison_plots.png"
 
 # Friendly x-axis labels for each condition
 CONDITION_LABELS = {
-    "person_walking":    "Person\nWalking",
-    "car_moving_away":   "Car Moving\nAway",
-    "car_moving_diagonal": "Car Moving\nDiagonally",
-    "multiple_cars":     "Multiple\nCars",
+    "person_walking":         "Person\nWalking",
+    "car_moving_away":        "Car Moving\nAway",
+    "car_moving_diagonal":    "Car Moving\nDiagonally",
+    "multiple_cars":          "Multiple\nCars",
+    "fireworks_camera_motion": "Fireworks\n(Camera Motion\n& Lighting)",
 }
 
 METHOD_COLORS = {
@@ -110,7 +111,7 @@ def main():
     rows = dedup_latest(load_results())
 
     # Collect all conditions present, preserving a sensible order
-    order = ["person_walking", "car_moving_away", "car_moving_diagonal", "multiple_cars"]
+    order = ["person_walking", "car_moving_away", "car_moving_diagonal", "multiple_cars", "fireworks_camera_motion"]
     conditions = [c for c in order if any(r["condition"] == c for r in rows)]
     # append any unexpected conditions that appeared
     for r in rows:

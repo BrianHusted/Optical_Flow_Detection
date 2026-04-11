@@ -7,6 +7,7 @@ VIDEOS = [
     ("data/videos/HD/car_moving_away_HD.mp4",        "car_moving_away"),
     ("data/videos/HD/car_moving_diagonally_HD.mp4",  "car_moving_diagonal"),
     ("data/videos/HD/multiple_cars_HD.mp4",          "multiple_cars"),
+    ("data/videos/HD/fireworks_moving_camera.mp4",   "fireworks_camera_motion"),
 ]
 
 
