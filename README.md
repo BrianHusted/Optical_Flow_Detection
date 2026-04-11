@@ -1,4 +1,5 @@
-# Computer Vision Project - Optical Flow Motion Detection and Tracking
+# Computer Vision Project - Motion Detection and Object Tracking in Video
+Using Optical Flow Techniques
 
 This project compares two optical flow methods for motion detection and tracking in video:
 
